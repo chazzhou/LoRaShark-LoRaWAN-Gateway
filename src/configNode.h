@@ -49,7 +49,8 @@ struct nodex {
 
 // Add all your named and trusted nodes to this list
 nodex nodes[] = {
-	{ 0x00000000 , "lora-00 well known sensor" }				// F=0
+	{ 0x00000000 , "lora-00 well known sensor" },				// F=0
+	{ 0xAAAAAAAA , "LoRaShark Test Node" }
 };
 
 #endif //_TRUSTED_NODES
@@ -76,9 +77,9 @@ struct codex  {
 // Definition of all nodes that we want to decode locally on the gateway.
 //
 codex decodes[] = {
-	{	0x00000000 , "lora-00",	// F=0
-		{ 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },
-		{ 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }
+	{	0xAAAAAAAA , "Test Node",	// F=0
+		{ 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC },
+		{ 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB, 0xBB }
 	}			
 };
 #endif //_LOCALSERVER
@@ -119,12 +120,12 @@ wpas wpa[] = {
 
 
 // Gateway Ident definitions. Where is the gateway located?
-#define _DESCRIPTION "ESP Gateway"			// Name of the gateway
-#define _EMAIL "mw12554@hotmail.com"		// Owner
-#define _PLATFORM "ESP8266"
-#define _LAT 52.237367
-#define _LON 5.978654
-#define _ALT 14								// Altitude
+#define _DESCRIPTION "ESP LoRaShark Gateway"			// Name of the gateway
+#define _EMAIL "zhou@linux.com"		// Owner
+#define _PLATFORM "ESP32"
+#define _LAT 0
+#define _LON 0
+#define _ALT 0								// Altitude
 
 
 // For asserting and testing the following defines are used.

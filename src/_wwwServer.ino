@@ -532,20 +532,20 @@ static void openWebPage()
 		response += "'><TITLE>1ch Gateway " + String(tt) + "</TITLE>";
 	}
 	else {
-		response += String("<!DOCTYPE HTML><HTML><HEAD><TITLE>1ch Gateway " + String(tt) + "</TITLE>");
+		response += String("<!DOCTYPE HTML><HTML><HEAD><TITLE>LoRaShark LoRaWAN 1ch Gateway " + String(tt) + "</TITLE>");
 	}
 #else
 	response += String("<!DOCTYPE HTML><HTML><HEAD><TITLE>1ch Gateway " + String(tt) + "</TITLE>");
 #endif
 	response += "<META HTTP-EQUIV='CONTENT-TYPE' CONTENT='text/html; charset=UTF-8'>";
-	response += "<META NAME='AUTHOR' CONTENT='M. Westenberg (mw1554@hotmail.com)'>";
+	response += "<META NAME='AUTHOR' CONTENT='Charles, Daniel, and Mykhailo'>";
 
 	response += "<style>.thead {background-color:green; color:white;} ";
 	response += ".cell {border: 1px solid black;}";
 	response += ".config_table {max_width:100%; min-width:300px; width:98%; border:1px solid black; border-collapse:collapse;}";
 	response += "</style></HEAD><BODY>";
 	
-	response +="<h1>ESP Gateway Config</h1>";
+	response +="<h1>LoRaShark LoRaWAN Gateway Config</h1>";
 
 	response +="<p style='font-size:10px;'>";
 	response +="Version: "; response+=VERSION;

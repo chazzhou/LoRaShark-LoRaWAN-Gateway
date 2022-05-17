@@ -1,7 +1,7 @@
 // 1-channel LoRa Gateway for ESP32 and ESP8266
 // Copyright (c) Maarten Westenberg 2016-2021 
 
-#define VERSION "V.6.2.8.EU868; PlatformIO 211015 a; distri GIT"
+#define VERSION "V.0.0.1 US915 Project LoRaShark ©2022 NUCS by Charles, Daniel, and Mykhailo"
 
 //
 // Based on work done by Thomas Telkamp for Raspberry PI 1ch gateway and many others.
@@ -45,9 +45,16 @@
 
 // Allows configuration through WifiManager AP setup. Must be 0 or 1	
 #if !defined _WIFIMANAGER				
-#	define _WIFIMANAGER 0
+#	define _WIFIMANAGER 1
 #endif
 
+#if !defined AP_NAME				
+#	define AP_NAME "LoRaWAN-Gateway"
+#endif
+
+#if !defined AP_PASSWD				
+#	define AP_PASSWD "workplease"
+#endif
 
 // Debug message will be put on Serial is this one is set.
 // If set to 0, no printing to USB devices is done.
@@ -87,7 +94,7 @@
 // AS923		(Not Used)
 // You can find the definitions in "loraModem.h" and frequencies in
 // See https://www.thethingsnetwork.org/docs/lorawan/frequency-plans.html
-#define EU863_870 1
+#define US902_928 1
  
 
 // Define the CLASS mode of the gateway
@@ -167,7 +174,7 @@
 //	4: ESP32, Heltec and TTGO pin out (should work for Heltec, 433 and Oled too).
 //	5: Other, define your own in loraModem.h (does not include GPS Code)
 #if !defined _PIN_OUT
-#	define _PIN_OUT 1
+#	define _PIN_OUT 4
 #endif
 
 
@@ -265,7 +272,7 @@
 // ntp
 // Please add daylight saving time to NTP_TIMEZONES when desired
 #define NTP_TIMESERVER "nl.pool.ntp.org"	// Country and region specific
-#define NTP_TIMEZONES	2					// How far is our Timezone from UTC (excl daylight saving/summer time)
+#define NTP_TIMEZONES	-5					// How far is our Timezone from UTC (excl daylight saving/summer time)
 #define SECS_IN_HOUR	3600
 #define _NTP_INTR 0							// Do NTP processing with interrupts or in loop();
 

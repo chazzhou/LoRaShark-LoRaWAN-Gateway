@@ -76,6 +76,7 @@ void initConfig(struct espGwayConfig *c)
 	(*c).seen = true;					// Seen interface is ON
 	(*c).expert = _EXPERT;				// Expert interface is default OFF
 	(*c).monitor = true;				// Monitoring is ON
+	(*c).showdata = 1;
 	(*c).trusted = 1;
 	(*c).txDelay = 0;					// First Value without saving is 0;
 	(*c).dusbStat = true;

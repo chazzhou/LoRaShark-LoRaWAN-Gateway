@@ -333,6 +333,10 @@ void setup() {
 		msg_oLED("FORMAT");
 		SPIFFS.format();
 		delay(500);
+		if(!SPIFFS.begin(true)){
+      		mPrint(F("An Error has occurred while mounting SPIFFS"));
+      		return;
+		}
 		initConfig(&gwayConfig);							// After a format reinit variables
 	}
 	
