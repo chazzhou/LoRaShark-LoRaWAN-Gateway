@@ -449,6 +449,12 @@ uint8_t receivePkt(uint8_t *payload)
 			mPrint("R rxPkt:: CRC used");
 		}
 #		endif //_MONITOR
+	} else {
+#		if _MONITOR>=1
+		if (( debug>=2) && (pdebug & P_RX )) {
+			mPrint("R rxPkt:: CRC NOT used");
+		}
+#		endif //_MONITOR
 	}
 
     //  Check for payload IRQ_LORA_CRCERR_MASK=0x20 set
